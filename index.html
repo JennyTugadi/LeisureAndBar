@@ -1,0 +1,140 @@
+<!DOCTYPE html />
+<html>
+<head>
+<title>Google Maps</title>
+<!---------------------------------------------------->       script             <!-------------------------------------->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+<script src="jquery/jquery-1.11.1.min.js"></script>
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script src="jquery/location.js"></script>
+<style>
+		#map-page, #map-canvas { width: 100%; height: 100%; padding: 0; }
+	</style>
+<!---------------------------------------------------->      API of google map             <!-------------------------------------->
+<link href='http://fonts.googleapis.com/css…' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<!---------------------------------------------------->      css for the canvass           <!-------------------------------------->
+ <style type="text/css">
+
+    
+
+	
+      html, body, #map-canvas {
+    height: 100%;
+        margin: 3px;
+        padding: 0px
+      }
+      .controls {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      #pac-input {
+        background-color: #fff;
+        padding: 0 11px 0 13px;
+        width: 400px;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        text-overflow: ellipsis;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+        margin-left: -1px;
+        padding-left: 14px;  /* Regular padding-left + 1. */
+        width: 401px;
+      }
+
+      .pac-container {
+        font-family: Roboto;
+      }
+
+      #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+}
+
+ 
+	  
+    </style>
+	
+
+</head>
+<body>
+
+<!---------------------------------------------------->        homepage           <!-------------------------------------->
+
+<div data-role="page" id="home" >
+<div data-role="header" data-theme="b" data-position="fixed"><h1>Gapo Positioning System</h1>
+</div>
+	
+<div data-role="main" class="ui-content">	
+<center>
+<h1>Olongapo City Entertainment and Leisure Place </h1>
+<p>is a mobile web mapping application</p>
+<p>developed by</p>
+<p>Haidee Arreola</p>
+</center>
+<br>
+
+<a href="#page1" data-theme="b" class="ui-btn" data-transition="pop"><h3>Start</h3></a>
+	</div>
+	
+<div data-role="footer" data-theme="b" data-position="fixed" ><h6>Project By: Haidee Arreola</h6></div>	
+</div>
+
+<!---------------------------------------------------->          Start of the Homepage         <!-------------------------------------->
+
+<div data-role="page" id="page1" >
+<div data-role="panel" id="panel" data-display="overlay">
+
+<ul data-role="listview" data-inset="true">
+
+</ul>
+<!-- Menus -->
+<ul data-role="listview" data-filter="true" data-filter-placeholder="Search Category" data-inset="true">
+<li><a href="#"  onclick="Restaurant()">Restaurant</a></li>
+<li><a href="#"  onclick="Casino()">Casino</a></li>
+<li><a href="#"  onclick="Entertainment()">Entertainment</a></li>
+<li><a href="#"  onclick="Bar()">Bar</a></li>
+<li><a href="#"  onclick="Club()">Club</a></li>
+<li><a href="#"  onclick="Mall()">Mall</a></li><br>
+
+
+
+
+
+
+<li data-icon="delete" ><a href="#" data-rel="close" >Back</a></li>
+
+
+</ul>
+
+</div>
+<div data-role="header" data-theme="b" data-position="fixed"><h1>Olongapo City Entertainment and leisure Place</h1>
+		<a href="#panel" class="ui-btn ui-icon-bars ui-btn-icon-notext"></a>
+		<a href="#home" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext" data-transition="pop"></a>
+</div>
+	
+	<div id="map_canvas" style="width:100%; height:600px">
+	</div>
+	
+
+</body>
+</html>
